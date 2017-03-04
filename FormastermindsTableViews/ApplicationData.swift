@@ -9,12 +9,15 @@
 import Foundation
 
 struct ApplicationData {
-    var items: [String] {
-        didSet {
-            items.sort(by: { (value1, value2) in value1 < value2 })
-            print("WQ_Item已经改变")
-        }
-    }
+    // 为了演示 移动元素的功能，排序功能不能用
+
+//    var items: [String] {
+//                 didSet {
+//            items.sort(by: { (value1, value2) in value1 < value2 })
+//            print("WQ_Item已经改变")
+//        }
+//    }
+    var items: [String]
     
     var details: [String: [String]]
     

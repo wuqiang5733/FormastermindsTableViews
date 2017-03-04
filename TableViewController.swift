@@ -87,6 +87,7 @@ class TableViewController: UITableViewController {
         }
     }
     // 点击 Edit 按钮之后，再点击出现 的 删除 按钮执行的代码
+    // 这个功能直接右划就可以执行
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
             let row = indexPath.row
@@ -97,7 +98,12 @@ class TableViewController: UITableViewController {
             myTable.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
         }
     }
-    
+    // 移动元素
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let item = AppData.items[sourceIndexPath.row]
+        AppData.items.remove(at: sourceIndexPath.row)
+        AppData.items.insert(item, at: destinationIndexPath.row)
+    }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
