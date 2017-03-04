@@ -38,7 +38,23 @@ class TableViewController: UITableViewController {
             if let path = myTable.indexPathForSelectedRow {
                 controller.selected = path.row
             }
+        }else if segue.identifier == "showAddItem" {
+            let controller = segue.destination as! AddItemViewController
+            controller.delegate = self   // 添加代理 
         }
+    }
+    /*
+     代理的好处是：now the table
+     won’t reload its data every time it is shown on the screen 
+     but only when new items are available.
+     */
+    func saveItem(title: String) {
+        let lower = title.lowercased()
+        let final = lower.capitalized
+        AppData.items.append(final)
+        AppData.details[final] = ["noimage", "Not Defined"]
+        _ = navigationController?.popViewController(animated: true)
+        myTable.reloadData()  // 添加元素之后，重新载入数据 显示出来
     }
     
     // 14 - 17
@@ -60,7 +76,7 @@ class TableViewController: UITableViewController {
         if let path = myTable.indexPathForSelectedRow {
             myTable.deselectRow(at: path, animated: true)
         }
-        myTable.reloadData()
+        //myTable.reloadData()  // 添加元素之后，重新载入数据 显示出来
     }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

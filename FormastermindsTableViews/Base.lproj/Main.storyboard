@@ -26,7 +26,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="VgN-eP-Xdp" kind="show" id="XhS-hw-hHU"/>
+                                    <segue destination="VgN-eP-Xdp" kind="show" identifier="showDetails" id="XhS-hw-hHU"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -38,7 +38,7 @@
                     <navigationItem key="navigationItem" title="Food Lists" id="rGt-7F-MPp">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="NkT-rV-rMa">
                             <connections>
-                                <segue destination="TsX-Jm-cFa" kind="show" id="fmd-Is-nRJ"/>
+                                <segue destination="TsX-Jm-cFa" kind="show" identifier="showAddItem" id="fmd-Is-nRJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -93,7 +93,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7lR-22-Lp4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1781.5999999999999" y="158.77061469265368"/>
+            <point key="canvasLocation" x="1882" y="-171"/>
         </scene>
         <!--Add Item-->
         <scene sceneID="gi0-jd-Rus">
@@ -139,7 +139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eeg-dm-mop" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2584.8000000000002" y="158.77061469265368"/>
+            <point key="canvasLocation" x="1881" y="510"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HqO-Cp-JMV">
