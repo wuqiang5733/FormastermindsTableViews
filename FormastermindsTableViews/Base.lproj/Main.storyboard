@@ -22,9 +22,12 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rb3-hz-thI" id="fLB-jz-q6a">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="VgN-eP-Xdp" kind="show" id="XhS-hw-hHU"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -32,10 +35,15 @@
                             <outlet property="delegate" destination="cdm-Vp-cZO" id="ZXK-RX-yAB"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Food Lists" id="rGt-7F-MPp"/>
+                    <navigationItem key="navigationItem" title="Food Lists" id="rGt-7F-MPp">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="NkT-rV-rMa">
+                            <connections>
+                                <segue destination="TsX-Jm-cFa" kind="show" id="fmd-Is-nRJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="myTable" destination="abk-y9-YfT" id="sFd-6y-cGQ"/>
-                        <segue destination="VgN-eP-Xdp" kind="show" identifier="showDetails" id="78G-2Q-PNX"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lnj-Ws-dzc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -86,6 +94,52 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7lR-22-Lp4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1781.5999999999999" y="158.77061469265368"/>
+        </scene>
+        <!--Add Item-->
+        <scene sceneID="gi0-jd-Rus">
+            <objects>
+                <viewController id="TsX-Jm-cFa" customClass="AddItemViewController" customModule="FormastermindsTableViews" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mVB-6O-eDo"/>
+                        <viewControllerLayoutGuide type="bottom" id="X7o-60-xmN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="40a-8g-dlm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWu-Au-zb0">
+                                <rect key="frame" x="16" y="126" width="73" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n0y-rW-ArZ">
+                                <rect key="frame" x="114" y="122" width="245" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfk-GJ-yBe">
+                                <rect key="frame" x="319" y="200" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveItem:" destination="TsX-Jm-cFa" eventType="touchUpInside" id="yUU-te-z53"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Item" id="aoG-2B-qKx"/>
+                    <connections>
+                        <outlet property="newItem" destination="n0y-rW-ArZ" id="fxF-04-MSj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eeg-dm-mop" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2584.8000000000002" y="158.77061469265368"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HqO-Cp-JMV">

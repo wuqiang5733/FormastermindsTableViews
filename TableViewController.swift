@@ -28,10 +28,10 @@ class TableViewController: UITableViewController {
     }
     // 下面这个方法是从一个 ControlView 到另一个 ControlView 时用的
     // 如果直接从 prototype cell 拖线到 DetailsView 是不需要这个方法的
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showDetails", sender: self)
-        print("WQ_Segue Executed!")
-    }
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        performSegue(withIdentifier: "showDetails", sender: self)
+//        print("WQ_Segue Executed!")
+//    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetails" {
             let controller = segue.destination as! DetailViewController
@@ -46,11 +46,21 @@ class TableViewController: UITableViewController {
      一当选中一行，这一行就会一直选中，甚至从 Details 界面当中返回到 TableViews 当中
       viewWillAppear 方法会执行 by the system every time the main view is going to be shown on the screen
      */
+    
+    /*
+     The process adds the item to the model, but the Table View still doesn’t know
+     that there are more items available. One way to tell the table to update its content is
+     by calling the reloadData() method. In our example, the best moment to call this
+     method is when the table is about to be shown on the screen. The following
+     example updates the viewWillAppear() method of Listing 14-17 to reload the data
+     every time the user comes back to the table.
+     */
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if let path = myTable.indexPathForSelectedRow {
             myTable.deselectRow(at: path, animated: true)
         }
+        myTable.reloadData()
     }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
