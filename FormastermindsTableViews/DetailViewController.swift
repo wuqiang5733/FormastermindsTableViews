@@ -30,6 +30,14 @@ class DetailViewController: UIViewController {
         }
     }
     
+    @IBAction func deleteItem(_ sender: Any) {
+        let title = AppData.items[selected]
+        AppData.details.removeValue(forKey: title)
+        AppData.items.remove(at: selected)
+        _ = navigationController?.popViewController(animated: true)
+    }
+    
+    
 
     /*
     // MARK: - Navigation

@@ -76,7 +76,7 @@ class TableViewController: UITableViewController {
         if let path = myTable.indexPathForSelectedRow {
             myTable.deselectRow(at: path, animated: true)
         }
-        //myTable.reloadData()  // 添加元素之后，重新载入数据 显示出来
+        myTable.reloadData()  // 添加元素之后，重新载入数据 显示出来(删除完 Item 之后也得用)
     }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
