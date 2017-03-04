@@ -78,6 +78,26 @@ class TableViewController: UITableViewController {
         }
         myTable.reloadData()  // 添加元素之后，重新载入数据 显示出来(删除完 Item 之后也得用)
     }
+    // 点击编辑按钮
+    @IBAction func editItems(_ sender: Any) {
+        if myTable.isEditing {
+            myTable.setEditing(false, animated: true)
+        } else {
+            myTable.setEditing(true, animated: true)
+        }
+    }
+    // 点击 Edit 按钮之后，再点击出现 的 删除 按钮执行的代码
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            let row = indexPath.row
+            let item = AppData.items[row]
+            AppData.details.removeValue(forKey: item)
+            AppData.items.remove(at: row)
+            
+            myTable.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
+        }
+    }
+    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

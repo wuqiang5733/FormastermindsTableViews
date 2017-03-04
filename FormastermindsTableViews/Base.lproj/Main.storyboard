@@ -36,6 +36,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Food Lists" id="rGt-7F-MPp">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="6rY-ou-4ap">
+                            <connections>
+                                <action selector="editItems:" destination="cdm-Vp-cZO" id="hBK-4a-gVx"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="NkT-rV-rMa">
                             <connections>
                                 <segue destination="TsX-Jm-cFa" kind="show" identifier="showAddItem" id="fmd-Is-nRJ"/>
