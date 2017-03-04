@@ -11,40 +11,33 @@ import UIKit
 class TableViewController: UITableViewController {
     
     @IBOutlet var myTable: UITableView!
-    
-    var items: [String]!
-    
-    var images: [String: String]!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        items = ["Lettuce", "Tomatoes", "Milk", "Granola", "Donuts", "Cookies", "Butter", "Cheese", "Lemonade", "Yogurt", "Oatmeal", "Juice", "Tea", "Coffee", "Bagels", "Brownies", "Potatoes", "Onions"]
-        images = ["Lettuce": "lettuce", "Tomatoes": "tomato", "Milk": "milk", "Granola": "granola", "Donuts": "donuts", "Cookies": "cookies", "Butter": "butter", "Cheese": "cheese", "Lemonade": "lemonade", "Yogurt": "yogurt", "Oatmeal": "oatmeal", "Juice": "juice", "Tea": "tea", "Coffee": "coffee", "Bagels": "bagels", "Brownies": "brownies", "Potatoes": "potato", "Onions": "onions"]
-        items.sort(by: { (value1, value2) in value1 < value2 })
-        myTable.dataSource = self
         myTable.delegate = self
+        myTable.dataSource = self
     }
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        let data = AppData.items
+        return data.count
     }
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = myTable.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! FoodCell
-        let row = indexPath.row
-        let title = items[row]
-        cell.cellTitle.text = title
-        
-        if let image = images[title] {
-            cell.cellImage.image = UIImage(named: image)
-        }
+        let data = AppData.items
+        let cell = myTable.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
+        cell.textLabel?.text = data[indexPath.row]
         return cell
     }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showDetails", sender: self)
+        print("WQ_Segue Executed!")
     }
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetails" {
+            let controller = segue.destination as! DetailViewController
+            if let path = myTable.indexPathForSelectedRow {
+                controller.selected = path.row
+            }
+        }
+    }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

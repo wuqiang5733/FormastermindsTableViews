@@ -15,6 +15,8 @@
 		042250F51E6A632E0002A942 /* FormastermindsTableViewsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042250F41E6A632E0002A942 /* FormastermindsTableViewsUITests.swift */; };
 		042251031E6A66360002A942 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042251021E6A66360002A942 /* TableViewController.swift */; };
 		042251051E6A66ED0002A942 /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042251041E6A66ED0002A942 /* FoodCell.swift */; };
+		042251071E6A71500002A942 /* ApplicationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042251061E6A71500002A942 /* ApplicationData.swift */; };
+		042251091E6A72F10002A942 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042251081E6A72F10002A942 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		042250F61E6A632E0002A942 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		042251021E6A66360002A942 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewController.swift; path = ../TableViewController.swift; sourceTree = "<group>"; };
 		042251041E6A66ED0002A942 /* FoodCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodCell.swift; sourceTree = "<group>"; };
+		042251061E6A71500002A942 /* ApplicationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationData.swift; sourceTree = "<group>"; };
+		042251081E6A72F10002A942 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 				042250D41E6A632E0002A942 /* AppDelegate.swift */,
 				042251021E6A66360002A942 /* TableViewController.swift */,
 				042250D81E6A632E0002A942 /* Main.storyboard */,
+				042251081E6A72F10002A942 /* DetailViewController.swift */,
+				042251061E6A71500002A942 /* ApplicationData.swift */,
 				042251041E6A66ED0002A942 /* FoodCell.swift */,
 				042250DB1E6A632E0002A942 /* Assets.xcassets */,
 				042250DD1E6A632E0002A942 /* LaunchScreen.storyboard */,
@@ -264,6 +270,8 @@
 			files = (
 				042250D51E6A632E0002A942 /* AppDelegate.swift in Sources */,
 				042251051E6A66ED0002A942 /* FoodCell.swift in Sources */,
+				042251091E6A72F10002A942 /* DetailViewController.swift in Sources */,
+				042251071E6A71500002A942 /* ApplicationData.swift in Sources */,
 				042251031E6A66360002A942 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
